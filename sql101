@@ -1,0 +1,142 @@
+on this lesson i created 3 tables, students, teachers and subjects. 
+
+1st table
+STUDENTS
+USE School;
+CREATE TABLE Students (
+student_id INT PRIMARY KEY,
+student_name VARCHAR(255),
+student_birthday DATE,
+student_gender CHAR,
+joining_date Date,
+student_email VARCHAR(255),
+student_grade VARCHAR(255),
+student_path VARCHAR(255),
+student_GPA DOUBLE
+);
+USE School;
+INSERT INTO Students VALUES 
+(2210000,"Sarah Ahmed","1999-07-01","F","2014-09-01","sarah_ahm@mail.com","12th Grade","Scientific",97.10),
+(2210001,"Manar Jaber","1999-02-22","F","2014-09-01","mm_jaber@mail.com","12th Grade","Scientific",99.38),
+(2210002,"Dana Suliman","2000-12-06","F","2015-09-01","Danah_s@mail.com","11th Grade","Scientific",80.71),
+(2210003,"Jana Mohammed","1999-3-04","F","2014-09-01","j_moham@mail.com","12th Grade","Humanitarian",99.49),
+(2210004,"Munira Khaled","1999-08-31","F","2014-09-01","Munira_kh@mail.com","12th Grade","Humanitarian",73.13),
+(2210005,"Razan Radhi","2000-06-03","F","2015-09-01","Razan_radhi@mail.com","11th Grade","Humanitarian",93.3),
+(2210006,"Shahad Rami","2000-03-13","F","2015-09-01","shahadrami@mail.com","11th Grade","Scientific",77.8),
+(2210007,"Lana Sami","1999-05-05","F","2014-09-01","LanaSami@mail.com","12th Grade","Scientific",95.9),
+(2210008,"Jawaher Abdulallah","1999-06-29","F","2014-09-01","A_Jawaher@mail.com","12th Grade","Humanitarian",89.66),
+(2210009,"Mona Naji","2000-07-07","F","2015-09-01","mona_mn@mail.com","11th Grade","Humanitarian",91.10),
+(2210010,"Aliaa Bakr","2000-05-24","F","2015-09-01","B_Aliaa@mail.com","11th Grade","Scientific",98.91),
+(2210011,"Norah Muaad","1999-03-01","F","2014-09-01","Norah_mm@mail.com","12th Grade","Scientific",81.8),
+(2210012,"Amal Saeed","2000-10-04","F","2015-09-01","Amal_saeed@mail.com","11th Grade","Scientific",83.33),
+(2210013,"Reham Badr","2000-07-11","F","2015-09-01","B_Reham@mail.com","11th Grade","Humanitarian",98.77),
+(2210014,"Raneem Abdulrahman","1999-08-09","F","2014-09-01","RaneemAbdul@mail.com","12th Grade","Scientific ",80.01),
+(2210015,"Omnia Ahmed","1999-10-04","F","2014-09-01","A_Omnia@mail.com","12th Grade","Scientific",92.22),
+(2210016,"Zahra Mohammed","2000-11-10","F","2015-09-01","ZharahMoh@mail.com","11th Grade","Scientific",81.11),
+(2210017,"Najlaa Abdulrahman","1999-07-02","F","2014-09-01","A_Najlaa@mail.com","12th Grade","Scientific",99.99),
+(2210018,"Tagreed Suliman","1999-01-04","F","2014-09-01","TagreedSuliman@mail.com","12th Grade","Humanitarian",84.21),
+(2210019,"Fatmah Zakria","2000-01-03","F","2015-09-01","Z_Fatmah@mail.com","11th Grade","Scientific",81.11),
+(2210020,"Maria Salem","1999-04-19","F","2014-09-01","MariaSa@mail.com","12th Grade","Scientific",95.55),
+(2210021,"Razan Saleh","1999-09-11","F","2014-09-01","Razan_saleh@mail.com","12th Grade","Humanitarian",91.81),
+(2210022,"Mawadaa Yaseer","2000-02-02","F","2015-09-01","Mawadaa_Yasser@mail.com","11th Grade","Scientific",98.01),
+(2210023,"Yara Naif","2000-11-05","F","2015-09-01","Yara_Naif@mail.com","11th Grade","Scientific",96.33),
+(2210024,"Ruba Salman","2000-11-09","F","2015-09-01","Ruba_Salman@mail.com","11th Grade","Humanitarian",92.01),
+(2210025,"Shatha Mousa","1999-10-04","F","2014-09-01","Shatha_Mousa@mail.com","12th Grade","Scientific ",93.33),
+(2210026,"Lujain Abdulmuhsin","1999-10-03","F","2014-09-01","LujainMuhsin@mail.com","12th Grade","Scientific",99.10),
+(2210027,"Renad Naif","2000-01-26","F","2015-09-01","Renad_Naif@mail.com","11th Grade","Humanitarian",80.11),
+(2210028,"Raghad Hamad","1999-03-11","F","2014-09-01","H_Raghad@mail.com","12th Grade","Scientific ",93.79),
+(2210029,"Maha Nasser","2000-10-04","F","2015-09-01","Maha_Na@mail.com","11th Grade","Scientific ",80.11)
+; 
+
+----- 2nd table 
+
+USE School;
+CREATE TABLE Treacher  (
+Teacher_id INT PRIMARY KEY,
+Teacher_name VARCHAR(255),
+Teacher_birthday DATE,
+Teacher_gender CHAR,
+Teacher_email VARCHAR(255),
+Teacher_office_number INT
+);
+USE School;
+INSERT INTO Treacher VALUES 
+(11100,"Noof Ali","1988-04-01","F","Noof_Ali@mail.com",17),
+(11101,"Batool Yasser","1981-12-23","F","Batool_Ya@mail.com",21),
+(11102,"Asmaa Mohammed","1985-08-01","F","Mo_Asmaa@mail.com",30),
+(11103,"Fatmah Sami","1980-05-29","F","FatmahSami@mail.com",12),
+(11104,"Reem Hamad","1988-01-06","F","Ha_Reem@mail.com",14),
+(11105,"Layla Badr","1989-02-14","F","LaylaBadr@mail.com",17),
+(11106,"Weaam Salem","1987-03-03","F","S_Weaam@mail.com",20),
+(11107,"Noof Ali","1988-04-01","F","Noof_Ali@mail.com",17),
+(11108,"Hanaa Abdulaziz","1988-04-01","F","Ab_Hanaa@mail.com",14),
+(11109,"Farah Othman","1988-04-01","F","Farah_othman@mail.com",30)
+;
+
+ ------ 3rd Table
+
+USE School;
+CREATE TABLE subjects
+(Subject_Id INT PRIMARY KEY, Subject_name VARCHAR(255));
+
+
+USE School;
+INSERT INTO Subjects VALUES
+(288, "Quran"),
+(315,"Mathematics"),
+(117,"English Language"),
+(110, "Science"),
+(414,"Art"),
+(210,"Computer Science")
+; 
+
+
+-----------------
+data manipulation on the tables:
+
+
+1
+
+/* DISPLAYING THE CONTENT OF ALL TABLES */
+USE School;
+SELECT * FROM Students;
+SELECT * FROM Subjects;
+SELECT * FROM Treacher;
+
+2
+
+/* Displaying the contents of the students table with the rows arranged in ascending order by the student's name */
+USE School;
+SELECT * 
+FROM Students
+ORDER BY student_name ASC;
+
+3
+
+/* Displaying the contents of the Students table while giving an alias to the “student name” field to shorten the column name or make it more meaningful */
+ 
+ USE School;
+ SELECT student_name AS name
+ from Students ;
+
+4
+
+/* Upadeing data: 
+A) Modifying a student's data and changing the student's email.
+B) Modifying a teacher's data and changing his office number. */
+USE School;
+UPDATE Students 
+SET student_email="FatamhZakria@mail.com"
+WHERE student_id= 2210019;
+
+USE School;
+UPDATE Treacher
+SET Teacher_office_number= 15
+WHERE Teacher_id = 11104;
+
+
+5
+
+/* Changing the name of a table*/
+USE School;
+ALTER TABLE Treacher RENAME TO Teachers;
