@@ -1,0 +1,125 @@
+this is related to the database i created on 101
+
+4 
+/* CRAEATING THE 3RD TABLE DUE TO THE MANY TO MANY RELATIONSHIP*/
+ USE School;
+CREATE TABLE Class
+( class_id INT PRIMARY KEY,
+student_id INT,
+Subject_Id INT,
+FOREIGN KEY (student_id) REFERENCES Students(student_id),
+FOREIGN KEY (Subject_Id) REFERENCES subjects(Subject_Id)
+);
+INSERT INTO Class VALUES (111,2210000,110); 
+INSERT INTO Class VALUES (112,2210001,117); 
+INSERT INTO Class VALUES (113,2210002,117);
+INSERT INTO Class VALUES (114,2210003,210);
+INSERT INTO Class VALUES (115,2210004,288);
+INSERT INTO Class VALUES (116,2210005,315);
+INSERT INTO Class VALUES (117,2210006,414);
+INSERT INTO Class VALUES (118,2210007,110);
+INSERT INTO Class VALUES (119,2210008,117);
+INSERT INTO Class VALUES (121,2210009,210); 
+INSERT INTO Class VALUES (122,2210010,288);
+INSERT INTO Class VALUES (123,2210011,315);
+INSERT INTO Class VALUES (124,2210012,414);
+INSERT INTO Class VALUES (125,2210013,110);
+INSERT INTO Class VALUES (126,2210014,117);
+INSERT INTO Class VALUES (127,2210015,210);
+INSERT INTO Class VALUES (128,2210016,288);
+INSERT INTO Class VALUES (129,2210017,315);
+INSERT INTO Class VALUES (131,2210018,414);
+INSERT INTO Class VALUES (132,2210019,110);
+INSERT INTO Class VALUES (133,2210020,210); 
+INSERT INTO Class VALUES (134,2210021,288);
+INSERT INTO Class VALUES (135,2210022,315); 
+INSERT INTO Class VALUES (136,2210023,414); 
+INSERT INTO Class VALUES (137,2210024,110); 
+INSERT INTO Class VALUES (138,2210025,117); 
+INSERT INTO Class VALUES (139,2210026,210); 
+INSERT INTO Class VALUES (141,2210027,288); 
+INSERT INTO Class VALUES (142,2210028,315); 
+INSERT INTO Class VALUES (143,2210029,414); 
+
+/* CREATING THE PROCEDURE */
+USE School;
+DELIMITER //
+CREATE PROCEDURE student_info()
+BEGIN 
+SELECT student_name, Subject_name
+FROM Class
+JOIN Students 
+ON Class.student_id=Students.student_id
+JOIN subjects
+ON Class.Subject_Id=subjects.Subject_Id;
+END; 
+
+/* CALLING THE PROCEDURE*/
+CALL student_info;
+
+/* DONE!*/
+
+
+5
+CREATE TABLE Teachers  (
+Teacher_id INT PRIMARY KEY,
+Teacher_name VARCHAR(255),
+Teacher_birthday DATE,
+Teacher_gender CHAR,
+Teacher_email VARCHAR(255),
+Teacher_office_number INT,
+ Subject_Id  INT ,
+  FOREIGN KEY (Subject_Id) REFERENCES SubjectS(Subject_Id)
+); 
+
+INSERT INTO Teachers VALUES 
+(11100,"Noof Ali","1988-04-01","F","Noof_Ali@mail.com",17,110),
+(11101,"Batool Yasser","1981-12-23","F","Batool_Ya@mail.com",21,117),
+(11102,"Asmaa Mohammed","1985-08-01","F","Mo_Asmaa@mail.com",30,210),
+(11103,"Fatmah Sami","1980-05-29","F","FatmahSami@mail.com",12,288),
+(11104,"Reem Hamad","1988-01-06","F","Ha_Reem@mail.com",14,315),
+(11105,"Layla Badr","1989-02-14","F","LaylaBadr@mail.com",17,414),
+(11106,"Weaam Salem","1987-03-03","F","S_Weaam@mail.com",20,110),
+(11107,"Noof Ali","1988-04-01","F","Noof_Ali@mail.com",17,117),
+(11108,"Hanaa Abdulaziz","1988-04-01","F","Ab_Hanaa@mail.com",14,210),
+(11109,"Farah Othman","1988-04-01","F","Farah_othman@mail.com",30,288)
+;
+
+SELECT teacher_name, teacher_office_number, subject_name
+FROM Teachers
+JOIN subjects
+ON Teachers.teacher_id = subjects.Subject_Id;
+
+/* VIEW CREATING */
+CREATE VIEW teacher_info 
+AS
+SELECT teacher_name, teacher_office_number, subject_name
+FROM Teachers
+JOIN subjects
+ON Teachers.subject_id=subjects.subject_id;
+
+/* VIEW CONTENT */
+SELECT * FROM teacher_info;  
+
+/* DROPING A VIEW */
+DROP VIEW teacher_info;
+
+
+
+
+6
+
+/* -- CREATING AN INDEX */
+USE School;
+CREATE INDEX StudentsNames
+ON Students(student_name) ; 
+
+/* -- TO SHOW AN INDEX */
+USE School;
+SHOW INDEXES FROM Students; 
+
+/* -- DROP AN INDEX */
+USE School;
+DROP INDEX StudentsNames ON Students; 
+
+
