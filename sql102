@@ -1,0 +1,66 @@
+this is the working on the same database i created in sql101 
+
+1
+
+USE School;
+CREATE TABLE outstanding_students;
+SELECT * FROM Students                      
+WHERE student_grade> 90;  
+
+2
+
+USE School;
+CREATE TABLE Non_passing_students;
+SELECT * FROM Students                      
+WHERE student_GPA<60.00;  
+
+3
+
+USE School;
+SELECT *
+FROM Students 
+WHERE student_name LIKE 'A%';
+
+4
+
+USE School;
+SELECT *
+FROM Students 
+WHERE student_name LIKE '____';
+
+5
+
+USE School;
+SELECT AVG(student_GPA) AS Average_GPA
+FROM Students;
+
+6
+
+USE School;     
+SELECT MAX(student_GPA) AS highest_GPA
+FROM Students; 
+
+7
+
+USE School;   
+SELECT MIN(student_GPA) AS lowest
+FROM Students;
+
+8
+
+USE School;
+SELECT COUNT(student_id)
+FROM Students
+WHERE student_grade ='11th Grade';
+
+9
+
+USE School;
+SELECT DISTINCT student_path
+FROM Students ;
+
+10
+
+USE School;
+SELECT UPPER (Subject_name) 
+FROM subjects;
