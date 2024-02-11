@@ -1,66 +1,97 @@
 this is the working on the same database i created in sql101 
 
 1
+/* Creating a table for outstanding students *\
 
 USE School;
 CREATE TABLE outstanding_students;
 SELECT * FROM Students                      
-WHERE student_grade> 90;  
+WHERE student_grade> 90; 
+
+/* Displaying the content of this table *\
+
+SELECT * FROM outstanding_students;
+
+-- ------------------------------------
 
 2
+/* Creating a table for students who didn't pass */
 
 USE School;
 CREATE TABLE Non_passing_students;
 SELECT * FROM Students                      
 WHERE student_GPA<60.00;  
 
+-- ---------------------------------------
+
 3
+/* Displaying student names start with the letter A */
 
 USE School;
 SELECT *
 FROM Students 
 WHERE student_name LIKE 'A%';
 
+-- ---------------------------------------
+
 4
+/* Displaying the names of students whose names contain four letter in their names */
 
 USE School;
 SELECT *
 FROM Students 
 WHERE student_name LIKE '____';
+-- ---------------------------------------
+
 
 5
+/* Applying the Aggregate functions AVG to a student's GPA */
 
 USE School;
-SELECT AVG(student_GPA) AS Average_GPA
+SELECT AVG(student_GPA) AS average_GPA
 FROM Students;
+-- ---------------------------------------
 
 6
+/* Applying the Aggregate functions MAX to a student's GPA */
 
 USE School;     
 SELECT MAX(student_GPA) AS highest_GPA
 FROM Students; 
 
+-- ---------------------------------------
+
 7
+/* Applying the Aggregate function MIN to a student's GPA */
 
 USE School;   
-SELECT MIN(student_GPA) AS lowest
+SELECT MIN(student_GPA) AS lowest_GPA
 FROM Students;
 
+-- ---------------------------------------
+
 8
+/* Displaying the names of outstanding students in the 11th grade with a cumulative average of 100 */
 
 USE School;
 SELECT COUNT(student_id)
 FROM Students
-WHERE student_grade ='11th Grade';
+WHERE student_grade ='11th Grade' AND student_GPA = 100;
+
+-- ---------------------------------------
 
 9
+/* Displaying students' path in the school without repetition */
 
 USE School;
 SELECT DISTINCT student_path
 FROM Students ;
 
+-- ---------------------------------------
+
 10
+/* Displaying courses names in capital letters */
 
 USE School;
-SELECT UPPER (Subject_name) 
-FROM subjects;
+SELECT UPPER (Displaying_name) 
+FROM Displaying;
